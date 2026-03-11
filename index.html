@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cripto - Mi proyecto de APIS</title>
+    <!-- Me he traído la fuente 'Inter' de Google Fonts porque la de por defecto es super fea -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vinculo mi CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Este div centra toda la gaita en la pantalla -->
+    <div class="container">
+        
+        <header>
+            <h1>Precios Crypto Reales</h1>
+            <p class="subtitle">Mi primer trasteo con APIS (CoinGecko)</p>
+        </header>
+
+        <main>
+            <!-- Este div está vacío ahora pero mi app.js se encargará de llenarlo con divs 'crypto-card' -->
+            <div id="crypto-container" class="crypto-grid">
+                <!-- Mientras el js hace el fetch, dejo este texto aquí para que no se vea blanco total -->
+                <p style="text-align: center; color: var(--text-muted); padding: 50px;">
+                    Dale un segundo, pidiendo los datos a la API...
+                </p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Pongo el script justo antes del cierre del body pesado por recomendación de rendimiento -->
+    <script src="app.js"></script>
+</body>
+</html>
