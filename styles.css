@@ -1,0 +1,128 @@
+/* =========================================================================
+   VARIABLES GLOBALES
+   Aquí se definen los colores y valores reutilizables para todo el proyecto.
+   ========================================================================= */
+:root {
+    --bg-color: #0b0f19;         /* Color de fondo principal de la página */
+    --card-bg: #151b2b;          /* Color de fondo para las tarjetas de criptomonedas */
+    --card-hover: #1c2438;       /* Color de fondo de las tarjetas al pasar el ratón */
+    --text-main: #f8fafc;        /* Color del texto principal (blanco) */
+    --text-muted: #94a3b8;       /* Color del texto secundario (gris claro) */
+    --accent-blue: #3b82f6;      /* Color de acento azul (usado en bordes y focos) */
+    --positive: #10b981;         /* Color verde para indicar valores positivos */
+    --negative: #ef4444;         /* Color rojo para indicar valores negativos */
+    --border-color: #273147;     /* Color de los bordes (líneas divisorias) */
+}
+
+/* =========================================================================
+   RESETEOS BÁSICOS
+   Elimina los márgenes y rellenos por defecto que añaden los navegadores.
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que padding/border no sumen anchura extra */
+}
+
+/* =========================================================================
+   ESTILOS GENERALES Y ESTRUCTURA
+   Aplica la fuente principal, color de fondo y centra el contenido.
+   ========================================================================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centrado horizontal de la página */
+    padding: 2.5rem 1rem;
+}
+
+/* Contenedor principal que limita el ancho máximo del contenido */
+.container { width: 100%; max-width: 1200px; }
+
+/* =========================================================================
+   ENCABEZADO (TÍTULOS)
+   ========================================================================= */
+header { text-align: center; margin-bottom: 3.5rem; }
+
+/* Título principal con un bonito efecto de degradado de texto */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
+    -webkit-background-clip: text; background-clip: text;           
+    -webkit-text-fill-color: transparent; color: transparent;              
+}
+
+/* Subtítulo debajo del título principal */
+.subtitle { color: var(--text-muted); font-size: 1.15rem; }
+
+/* =========================================================================
+   BARRA DE BÚSQUEDA
+   Estilos preparados para el input de búsqueda interactivo.
+   ========================================================================= */
+.controls { display: flex; justify-content: center; margin-bottom: 3rem; }
+.search-box { width: 100%; max-width: 450px; }
+
+/* Aspecto principal de la entrada de texto ("píldora" redondeada) */
+.search-box input {
+    width: 100%; padding: 1rem 1.5rem; border-radius: 99px;
+    border: 1px solid var(--border-color); background-color: rgba(21, 27, 43, 0.7);
+    color: var(--text-main); font-size: 1.05rem; outline: none; transition: all 0.3s ease;
+}
+
+/* Efecto visual al hacer clic en el buscador (resplandor azul) */
+.search-box input:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); }
+
+/* =========================================================================
+   CUADRÍCULA DE CRIPTOMONEDAS (GRID)
+   Organiza las tarjetas de forma dinámica (muchas columnas en PC, una en móvil)
+   ========================================================================= */
+.crypto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+/* =========================================================================
+   TARJETAS INDIVIDUALES DE CRIPTOMONEDAS
+   ========================================================================= */
+.crypto-card {
+    background-color: var(--card-bg); border: 1px solid var(--border-color);
+    border-radius: 20px; padding: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Efecto "hover" que levanta la tarjeta y cambia su borde/sombra al pasar el ratón */
+.crypto-card:hover {
+    transform: translateY(-6px); box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent-blue);
+    background-color: var(--card-hover);
+}
+
+/* --- Contenido Interno de la Tarjeta --- */
+.card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+.crypto-icon { width: 48px; height: 48px; border-radius: 50%; background-color: #fff; padding: 2px; }
+.crypto-name { font-size: 1.15rem; font-weight: 600; }
+.crypto-symbol { font-size: 0.85rem; color: var(--text-muted); }
+.crypto-price { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+.crypto-change { font-size: 0.95rem; font-weight: 600; display: flex; padding: 4px 8px; border-radius: 6px; width: fit-content; }
+
+/* =========================================================================
+   CLASES DINÁMICAS (Usadas por app.js)
+   Rojo o verde dependiendo de si la cripto subió o bajó en las últimas 24H
+   ========================================================================= */
+.positive { color: var(--positive); background-color: rgba(16, 185, 129, 0.1); }
+.negative { color: var(--negative); background-color: rgba(239, 68, 68, 0.1); }
+
+/* =========================================================================
+   ANIMACIÓN DE CARGA (SPINNER)
+   Aparece mientras los datos se están descargando de internet.
+   ========================================================================= */
+.loader-container { display: flex; justify-content: center; align-items: center; min-height: 250px; grid-column: 1 / -1; }
+.spinner { width: 45px; height: 45px; border: 3px solid var(--border-color); border-top: 3px solid var(--accent-blue); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* =========================================================================
+   DISEÑO RESPONSIVO (MÓVILES)
+   Ajustes cuando la pantalla es más pequeña de 600px.
+   ========================================================================= */
+@media (max-width: 600px) { h1 { font-size: 2.2rem; } }
