@@ -26,3 +26,4 @@ Este proyecto no requiere ninguna instalación de base de datos ni de Node.js.
 - **Gráficos de Precios**: Visualización en línea de la tendencia semanal (Sparklines).
 - **Paginación o "Cargar más"**: Para no saturar la pantalla con 100 monedas de golpe.
 - **Conversor Integrado**: Herramienta rápida para calcular USD/Crypto al vuelo.
+- **Sistema de busqueda**: Para poder buscar criptomonedas por nombre.
