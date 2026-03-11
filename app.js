@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. BUSCAMOS LOS ELEMENTOS DEL HTML PARA PODER MODIFICARLOS ---
     // Guardamos en variables (constantes) qué partes de la web queremos utilizar
     const cryptoContainer = document.getElementById('crypto-container');
-    const searchInput = document.getElementById('search-input');
     const loadingSpinner = document.getElementById('loading');
     // Esta variable global guardará todas las monedas que nos devuelva internet centralmente
     let cryptoData = [];
@@ -67,19 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
     }
-    // --- 4. FUNCIÓN PARA LA BARRA DE BÚSQUEDA ---
-    // Evento 'input' se dispara cada vez que tecleas una letra nueva en la barra
-    searchInput.addEventListener('input', (evento) => {
-        // Capturamos el texto que escribió el usuario y pasamos todo a minúsculas
-        const textoEscrito = evento.target.value.toLowerCase().trim();
-        // Filtramos (.filter) las monedas guardadas buscando coincidencias (nombre como 'bitcoin' o símbolo como 'btc')
-        const monedasFiltradas = cryptoData.filter(coin =>
-            coin.name.toLowerCase().includes(textoEscrito) ||
-            coin.symbol.toLowerCase().includes(textoEscrito)
-        );
-        // Dibujamos de nuevo la pantalla, PERO solo con las monedas filtradas
-        renderCards(monedasFiltradas);
-    });
+
     // --- 5. COMENZAR EL PROGRAMA ---
     // Cuando abrimos la página por primera vez, ejecutamos la función de descarga automática
     fetchCryptos();

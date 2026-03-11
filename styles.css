@@ -60,22 +60,7 @@ h1 {
 /* Subtítulo debajo del título principal */
 .subtitle { color: var(--text-muted); font-size: 1.15rem; }
 
-/* =========================================================================
-   BARRA DE BÚSQUEDA
-   Estilos preparados para el input de búsqueda interactivo.
-   ========================================================================= */
-.controls { display: flex; justify-content: center; margin-bottom: 3rem; }
-.search-box { width: 100%; max-width: 450px; }
 
-/* Aspecto principal de la entrada de texto ("píldora" redondeada) */
-.search-box input {
-    width: 100%; padding: 1rem 1.5rem; border-radius: 99px;
-    border: 1px solid var(--border-color); background-color: rgba(21, 27, 43, 0.7);
-    color: var(--text-main); font-size: 1.05rem; outline: none; transition: all 0.3s ease;
-}
-
-/* Efecto visual al hacer clic en el buscador (resplandor azul) */
-.search-box input:focus { border-color: var(--accent-blue); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); }
 
 /* =========================================================================
    CUADRÍCULA DE CRIPTOMONEDAS (GRID)

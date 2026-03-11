@@ -19,3 +19,10 @@ Este proyecto no requiere ninguna instalación de base de datos ni de Node.js.
 - **CSS3** 
 - **JavaScript v8/ES6** 
 - Creado en entorno Ubuntu.
+
+---
+## 🚧 Próximamente (En desarrollo)
+- **Sistema de Favoritos**: Posibilidad de guardar las monedas que más te interesen (usando `localStorage` para que no se borren).
+- **Gráficos de Precios**: Visualización en línea de la tendencia semanal (Sparklines).
+- **Paginación o "Cargar más"**: Para no saturar la pantalla con 100 monedas de golpe.
+- **Conversor Integrado**: Herramienta rápida para calcular USD/Crypto al vuelo.

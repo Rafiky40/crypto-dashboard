@@ -21,10 +21,9 @@
         <main>
             <!-- Este div está vacío ahora pero mi app.js se encargará de llenarlo con divs 'crypto-card' -->
             <div id="crypto-container" class="crypto-grid">
-                <!-- Mientras el js hace el fetch, dejo este texto aquí para que no se vea blanco total -->
-                <p style="text-align: center; color: var(--text-muted); padding: 50px;">
-                    Dale un segundo, pidiendo los datos a la API...
-                </p>
+                <div id="loading" class="loader-container">
+                    <div class="spinner"></div>
+                </div>
             </div>
         </main>
 
